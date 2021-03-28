@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/loadFragment">
+
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="com.missclick.fordgame.ui.old.home.HomeFragment"
+        android:label="@string/title_home"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/navigation_dashboard"
+        android:name="com.missclick.fordgame.ui.old.dashboard.DashboardFragment"
+        android:label="@string/title_dashboard"
+        tools:layout="@layout/fragment_dashboard" />
+
+    <fragment
+        android:id="@+id/navigation_notifications"
+        android:name="com.missclick.fordgame.ui.old.notifications.NotificationsFragment"
+        android:label="@string/title_notifications"
+        tools:layout="@layout/fragment_notifications" />
+    <fragment
+        android:id="@+id/loadFragment"
+        android:name="com.missclick.fordgame.ui.loadFragment.LoadFragment"
+        android:label="fragment_load"
+        tools:layout="@layout/fragment_load" >
+        <action
+            android:id="@+id/action_loadFragment_to_gameOneFragment"
+            app:destination="@id/gameOneFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/gameOneFragment"
+        android:name="com.missclick.fordgame.ui.gameOne.GameOneFragment"
+        android:label="fragment_game_one"
+        tools:layout="@layout/fragment_game_one" >
+        <action
+            android:id="@+id/action_gameOneFragment_to_loseFragment"
+            app:destination="@id/loseFragment" />
+        <action
+            android:id="@+id/action_gameOneFragment_to_gameTwoFragment"
+            app:destination="@id/gameTwoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/loseFragment"
+        android:name="com.missclick.fordgame.ui.lose.LoseFragment"
+        android:label="fragment_lose"
+        tools:layout="@layout/fragment_lose" >
+        <action
+            android:id="@+id/action_loseFragment_to_loadFragment"
+            app:destination="@id/loadFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/gameTwoFragment"
+        android:name="com.missclick.fordgame.ui.gameTwo.GameTwoFragment"
+        android:label="fragment_game_two"
+        tools:layout="@layout/fragment_game_two" >
+        <action
+            android:id="@+id/action_gameTwoFragment_to_gameThreeFragment"
+            app:destination="@id/gameThreeFragment" />
+        <action
+            android:id="@+id/action_gameTwoFragment_to_loseFragment"
+            app:destination="@id/loseFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/gameThreeFragment"
+        android:name="com.missclick.fordgame.ui.GameThree.GameThreeFragment"
+        android:label="fragment_game_three"
+        tools:layout="@layout/fragment_game_three" >
+        <action
+            android:id="@+id/action_gameThreeFragment_to_winFragment"
+            app:destination="@id/winFragment" />
+        <action
+            android:id="@+id/action_gameThreeFragment_to_loseFragment"
+            app:destination="@id/loseFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/winFragment"
+        android:name="com.missclick.fordgame.ui.win.WinFragment"
+        android:label="fragment_win"
+        tools:layout="@layout/fragment_win" >
+        <action
+            android:id="@+id/action_winFragment_to_loadFragment"
+            app:destination="@id/loadFragment" />
+    </fragment>
+</navigation>
